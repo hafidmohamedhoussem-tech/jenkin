@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh '''
                     docker rm -f ${CONTAINER_NAME} || true
-                    docker run -d --name ${CONTAINER_NAME} -p ${APP_PORT}:8000 \\
+                    docker run -d --name ${CONTAINER_NAME} -p ${APP_PORT}:8000 \
                       -e APP_VERSION=${BUILD_NUMBER} ${IMAGE_NAME}:${BUILD_NUMBER}
                 '''
             }
@@ -36,3 +36,4 @@ pipeline {
         failure { echo 'Pipeline failed. Check the stage that reported an error.' }
     }
 }
+
