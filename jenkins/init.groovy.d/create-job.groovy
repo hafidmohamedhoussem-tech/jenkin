@@ -2,7 +2,7 @@ import jenkins.model.Jenkins
 import hudson.security.AuthorizationStrategy
 import hudson.security.SecurityRealm
 import hudson.plugins.git.GitSCM
-import hudson.plugins.git.branches.BranchSpec
+import hudson.plugins.git.BranchSpec
 import org.jenkinsci.plugins.workflow.job.WorkflowJob
 import org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition
 

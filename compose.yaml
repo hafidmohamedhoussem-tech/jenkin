@@ -1,0 +1,16 @@
+services:
+  jenkins:
+    image: jenkins-flask-controller:local
+    container_name: tp07-jenkins
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8082:8080"
+    volumes:
+      - .:/workspace/jenkins-flask-lab
+      - /var/run/docker.sock:/var/run/docker.sock
+      - jenkins_home:/var/jenkins_home
+
+volumes:
+  jenkins_home:
+    external: true
+    name: tp07_jenkins_home
