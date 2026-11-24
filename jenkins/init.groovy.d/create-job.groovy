@@ -10,11 +10,11 @@ Jenkins j = Jenkins.get()
 j.setSecurityRealm(SecurityRealm.NO_AUTHENTICATION)
 j.setAuthorizationStrategy(new AuthorizationStrategy.Unsecured())
 
-def scm = new GitSCM("file:///workspace/jenkins-flask-lab")
+def scm = new GitSCM("https://github.com/hafidmohamedhoussem-tech/jenkin.git")
 scm.branches = [new BranchSpec("*/main")]
 def definition = new CpsScmFlowDefinition(scm, "Jenkinsfile")
 def job = j.getItem("jenkins-flask-lab") ?: j.createProject(WorkflowJob, "jenkins-flask-lab")
 job.setDefinition(definition)
 job.save()
 j.save()
-println("Created jenkins-flask-lab from the local Git main branch")
+println("Created jenkins-flask-lab from the GitHub main branch")

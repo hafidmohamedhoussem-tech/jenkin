@@ -8,7 +8,7 @@ pipeline {
     }
     stages {
         stage('Checkout') {
-            steps { echo 'Source code is available in the workspace.' }
+            steps { echo 'Source code was checked out from GitHub.' }
         }
         stage('Build') {
             steps { sh 'docker build -t ${IMAGE_NAME}:${BUILD_NUMBER} .' }
